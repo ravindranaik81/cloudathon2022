@@ -1,0 +1,76 @@
+<form [formGroup]="loanInformationForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Loan Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      &nbsp;
+      <div class="row">
+        <div class="col">
+          Select a collateral to clone an account borrower is pledging
+
+        </div>
+      </div>
+
+      &nbsp;
+      <div class="row">
+        <div class="col">
+        <b>Collaterals</b>
+          <mat-radio-group formControlName="collaterals">
+            <mat-radio-button value="collateral1">101-123456-019</mat-radio-button>
+            <mat-radio-button value="collateral2">101-234568-019</mat-radio-button>
+            <mat-radio-button value="collateral3">101-123456-018</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+      &nbsp;&nbsp;
+      <div class="row">
+        <div class="col">
+          Select an existing account if the borrower is a client but is not pledging
+
+        </div>
+      </div>
+      &nbsp;
+      <div class="row">
+         <div class="col">
+           <b>Existing Account</b>
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Existing Account" formControlName="existingAccount"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      &nbsp;&nbsp;
+      <div class="row">
+        <div class="col">
+          Select a New Account if borrower does not have an account in Morgan Stanley
+        </div>
+      </div>
+
+      &nbsp;&nbsp;
+      <div class="row">
+        <div class="col">
+          <b>New Account</b>
+          <mat-radio-group formControlName="newAccount">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Account Type" formControlName="accountType">
+                <mat-option *ngFor="let accountType of accountTypes" [value]="accountType.abbreviation">
+                  {{ accountType.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="loanInformationForm.controls['accountType'].hasError('required')">
+                State is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+          </mat-radio-group>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="Continue">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
