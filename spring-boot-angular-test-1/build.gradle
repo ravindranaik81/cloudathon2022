@@ -15,6 +15,10 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+
+	implementation 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
@@ -24,9 +28,9 @@ test {
 
 azurewebapp {
 	subscription = 'b54acde2-eb6d-488b-8439-066dbd54def8'
-	resourceGroup = 'Ravi-Test-RG1'
-	appName = 'testwebappdemo7581'
-	pricingTier = 'F1'
+	resourceGroup = 'Lenz-Microflows-App-RG'
+	appName = 'lenz-microflows'
+	pricingTier = 'B1'
 	region = 'eastus'
 	runtime {
 		os = 'Linux'
