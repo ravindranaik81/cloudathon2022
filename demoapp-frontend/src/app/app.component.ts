@@ -15,7 +15,8 @@ export class AppComponent implements OnInit{
 
     public async ngOnInit(): Promise<void> {
       // Check if development or prod deployment
-      let restUrl = location.origin + '/api/hello?name=Azure';
+      //let restUrl = location.origin + '/api/hello?name=Azure';
+      let restUrl = 'https://lenz-microflows.azurewebsites.net/api/hello?name=Azure';
       if (this.isDevelopment()) {
         restUrl = 'http://localhost:8080/api/hello?name=Angular';
       }
