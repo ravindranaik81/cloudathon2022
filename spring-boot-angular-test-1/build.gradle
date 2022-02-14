@@ -17,6 +17,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'javax.validation:validation-api:2.0.1.Final'
+	implementation group: 'commons-scxml', name: 'commons-scxml', version: '0.9'
+	implementation 'commons-beanutils:commons-beanutils:1.9.4'
+	implementation 'xalan:xalan:2.6.0'
+	implementation 'commons-logging:commons-logging:1.1.1'
+	implementation 'commons-jexl:commons-jexl:1.1'
+	implementation 'commons-digester:commons-digester:1.8'
 
 	implementation 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE scxml>
+
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" initial = "PrimaryOpsReview-Pending">
+
+    <state id = "PrimaryOpsReview-Pending">
+        <transition event="PrimaryOpsReviewApprove" target="SecondaryOpsReview-Pending"/>
+        <transition event="PrimaryOpsReviewReject" target="OpsReview-Rejected"/>
+    </state>
+    <state id = "SecondaryOpsReview-Pending">
+        <transition event="SecondaryOpsReviewApprove" target="OpsReview-Approved"/>
+        <transition event="SecondaryOpsReviewReject" target="OpsReview-Rejected"/>
+    </state>
+    <final id ="OpsReview-Approved"/>
+    <final id ="OpsReview-Rejected"/>
+</scxml>
