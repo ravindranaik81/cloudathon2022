@@ -13,7 +13,7 @@ public class BusinessProcessState {
     @GeneratedValue
     private int businessProcessStateId;
 
-    private String businessProcessId;
+    private int businessProcessId;
 
     private String businessProcessStepCode;
 
@@ -29,7 +29,7 @@ public class BusinessProcessState {
         super();
     }
 
-    public BusinessProcessState(int businessProcessStateId, String businessProcessId, String businessProcessStepCode, String businessProcessStateCode, String appEventTypeCode, Date transactTs, String userId) {
+    public BusinessProcessState(int businessProcessStateId, int businessProcessId, String businessProcessStepCode, String businessProcessStateCode, String appEventTypeCode, Date transactTs, String userId) {
         this.businessProcessStateId = businessProcessStateId;
         this.businessProcessId = businessProcessId;
         this.businessProcessStepCode = businessProcessStepCode;
@@ -47,11 +47,11 @@ public class BusinessProcessState {
         this.businessProcessStateId = businessProcessStateId;
     }
 
-    public String getBusinessProcessId() {
+    public int getBusinessProcessId() {
         return businessProcessId;
     }
 
-    public void setBusinessProcessId(String businessProcessId) {
+    public void setBusinessProcessId(int businessProcessId) {
         this.businessProcessId = businessProcessId;
     }
 

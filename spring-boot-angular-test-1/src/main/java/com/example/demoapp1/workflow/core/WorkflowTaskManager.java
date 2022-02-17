@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Component
@@ -26,8 +28,8 @@ public class WorkflowTaskManager implements InitializingBean {
         stateMachine.initializeStateMachine();
         this.stateMachine = stateMachine;
         //Temp testing
-        applyEvent("PrimaryOpsReviewReject");
-        applyEvent("PrimaryOpsReviewApprove");
+        //applyEvent("PrimaryOpsReviewReject");
+        //applyEvent("PrimaryOpsReviewApprove");
     }
 
     public StateMachine getStateMachine() {
@@ -42,14 +44,17 @@ public class WorkflowTaskManager implements InitializingBean {
         }
     }
 
-    public void applyEvent(String event){
+    public List<String> applyEvent(String[] startingState, String event){
         //Temp testing
-        String[] startingState = new String[1];
-        startingState[0] = "PrimaryOpsReview-Pending";
+        //String[] startingState = new String[1];
+        //startingState[0] = "PrimaryOpsReview-Pending";
         SMStatus sm = this.stateMachine.applyEvent(startingState, event);
         // Put debug here
+        List<String> targetStateList = new ArrayList<>();
         sm.getStates().stream().forEach(state -> {
             System.out.println(state.toString());
+            targetStateList.add(state.getStateId());
         });
+        return targetStateList;
     }
 }
