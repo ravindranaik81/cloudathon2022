@@ -8,10 +8,5 @@ import java.util.List;
 
 public interface BusinessProcessRepository extends JpaRepository<BusinessProcess, Integer>{
 
-	//service.retrieveTodos(name)
 
-	//service.deleteTodo(id);
-	//service.retrieveTodo(id)
-	//service.updateTodo(todo)
-	//service.addTodo(getLoggedInUserName(model), todo.getDesc(), todo.getTargetDate(),false);
 }

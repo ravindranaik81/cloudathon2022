@@ -10,10 +10,5 @@ public interface BusinessProcessStateRepository extends JpaRepository<BusinessPr
 
     List<BusinessProcessState> findByBusinessProcessStepCodeAndBusinessProcessStateCode(String step, String state);
 
-	//service.retrieveTodos(name)
-
-	//service.deleteTodo(id);
-	//service.retrieveTodo(id)
-	//service.updateTodo(todo)
-	//service.addTodo(getLoggedInUserName(model), todo.getDesc(), todo.getTargetDate(),false);
+	List<BusinessProcessState> findByBusinessProcessId(int businessProcessId);
 }

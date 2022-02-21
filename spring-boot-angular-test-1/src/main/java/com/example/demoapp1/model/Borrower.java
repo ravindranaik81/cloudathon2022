@@ -29,7 +29,7 @@ public class Borrower {
 
     private String address;
 
-    private String businessProcessId;
+    private int businessProcessId;
 
     private String appEventTypeCode;
 
@@ -37,7 +37,7 @@ public class Borrower {
 
     private String userId;
 
-    public Borrower(String firstName, String lastName, String mobileNumber, boolean isPrimary, Date birthDate, String identityType, String identityNumber, String address, String businessProcessId, String appEventTypeCode, Date transactTs, String userId) {
+    public Borrower(String firstName, String lastName, String mobileNumber, boolean isPrimary, Date birthDate, String identityType, String identityNumber, String address, int businessProcessId, String appEventTypeCode, Date transactTs, String userId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobileNumber = mobileNumber;
@@ -128,11 +128,11 @@ public class Borrower {
         this.address = address;
     }
 
-    public String getBusinessProcessId() {
+    public int getBusinessProcessId() {
         return businessProcessId;
     }
 
-    public void setBusinessProcessId(String businessProcessId) {
+    public void setBusinessProcessId(int businessProcessId) {
         this.businessProcessId = businessProcessId;
     }
 

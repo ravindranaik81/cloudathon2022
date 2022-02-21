@@ -21,7 +21,7 @@ public class FacilityRequest {
 
     private String maturityCode;
 
-    private String businessProcessId;
+    private int businessProcessId;
 
     private String appEventTypeCode;
 
@@ -33,7 +33,7 @@ public class FacilityRequest {
         super();
     }
 
-    public FacilityRequest(String loanType, float loanAmount, float collateralAmount, String maturityCode, String businessProcessId, String appEventTypeCode, Date transactTs, String userId) {
+    public FacilityRequest(String loanType, float loanAmount, float collateralAmount, String maturityCode, int businessProcessId, String appEventTypeCode, Date transactTs, String userId) {
         this.loanType = loanType;
         this.loanAmount = loanAmount;
         this.collateralAmount = collateralAmount;
@@ -84,11 +84,11 @@ public class FacilityRequest {
         this.maturityCode = maturityCode;
     }
 
-    public String getBusinessProcessId() {
+    public int getBusinessProcessId() {
         return businessProcessId;
     }
 
-    public void setBusinessProcessId(String businessProcessId) {
+    public void setBusinessProcessId(int businessProcessId) {
         this.businessProcessId = businessProcessId;
     }
 
